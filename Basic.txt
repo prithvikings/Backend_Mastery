@@ -1,1 +1,38 @@
-his
+What is backend?
+backend devloper wo banda hai jo ki server and db program karta hai.
+
+
+why backend?
+to make websites more usable and purposefull for the audience, to make websites dynamic
+
+
+why not frontend alone?
+with frontend websites are static and they are of not usable
+
+
+what do we need ?
+nodejs, mongodb, mongoosejs, express js
+
+
+what should we make to hit big companies?
+
+
+
+CONTENT
+- node js install
+- import and export
+- run the code
+-- node js core usage & understanding - http
+- npm usage
+- express
+- express generator
+- mongodb
+-- intermediate mongodb
+-- api development
+-- authentication and authorization
+-- error handling
+- middleware
+-- session and cookies
+-- depoloyment
+-- testing
+-- realtime stuff
