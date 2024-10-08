@@ -13,14 +13,17 @@ with frontend websites are static and they are of not usable
 what do we need ?
 nodejs, mongodb, mongoosejs, express js
 
-
 what should we make to hit big companies?
 
+what is node js ?
+
+node js hai khoob sara c++ ka code jo ki liya gaya hai chrome browser ke v8 engine ke code se aur is c++ code jisko liya gaya usey wrap kar diya gaya js code se and ye hume allow karta hai ke hum js code likhein aur ye js code accept karega and c++ ke basis par apko ek server enviroment bana kar dega par sirf tab tak ye code chalayega.
 
 
 CONTENT
-- node js install
-- import and export
+-what 
+- node js install ✅
+- import and export 
 - run the code
 -- node js core usage & understanding - http
 - npm usage
