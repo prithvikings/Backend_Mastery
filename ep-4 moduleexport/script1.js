@@ -1,9 +1,12 @@
-require('./script2.js'); //one module to another module
-const obj=require('./script3.js');
+require('./script2.js');
+ //one module to another module
+const {calculatesum,multiply,subtract}=require('./calculate');
+const data=require('./data.json');
 var name="Pritv=esh";
 var a=10;
 var b=20;
-obj.calculatesum(a,b);
+calculatesum(a,b);
+multiply(a,b);
+subtract(a,b);
 console.log(name);
-console.log(obj.x);
-
+console.log(data.address);

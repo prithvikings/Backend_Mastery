@@ -1,0 +1,10 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "email": "johndoes@gj",
+    "address": {
+        "street": "123 Main St",
+        "city": "Miami",
+        "state": "FL"
+    }
+}
