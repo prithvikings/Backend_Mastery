@@ -10,3 +10,4 @@ multiply(a,b);
 subtract(a,b);
 console.log(name);
 console.log(data.address);
+
