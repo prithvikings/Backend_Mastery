@@ -1,1 +1,2 @@
-console.log("Hello from script2.js");
+const msg= "Hello World";
+module.exports = msg;

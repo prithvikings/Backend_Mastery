@@ -1,4 +1,4 @@
-require('./script2.js');
+const msg=require('./script2.js');
  //one module to another module
 const {calculatesum,multiply,subtract}=require('./calculate');
 const data=require('./data.json');
@@ -10,6 +10,7 @@ multiply(a,b);
 subtract(a,b);
 console.log(name);
 console.log(data.address);
+console.log(msg);
 
 
 
