@@ -1,0 +1,31 @@
+About Node js
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to run 
+
+what is node js ?
+node js hai khoob sara c++ ka code jo ki liya gaya hai chrome browser ke v8 engine ke code se aur is c++ code jisko liya gaya usey wrap kar diya gaya js code se and ye hume allow karta hai ke hum js code likhein aur ye js code accept karega and c++ ke basis par apko ek server enviroment bana kar dega par sirf tab tak ye code chalayega jab tak aapka node(v8 engine and js wrapper) chalu hai.
+
+Ryan ko js se backend banana tha to woh chrome ka v8 engine leta hai jo ki c++ ke code mein likha tha and phir uske upar ek wrapper lagata hai js ka jissey hum backend bana skte hai in js also and also we can run js code outside the browser and complete package of that wrapper and v8 engine is called node js.
+
+
+Installing Node.js and npm.
+To install Node.js and npm, follow these steps:
+1.  Go to the official Node.js website and download the latest version of Node.js for your operating system.
+2.  Run the installer and follow the prompts to install Node.js and npm.
+3.  Once installed, open a terminal or command prompt and type `node -v` to verify that Node.js is installed correctly.
+4.  Type `npm -v` to verify that npm is installed correctly.
+
+5.  You can also check the version of Node.js and npm by running `node --version
+
+
+Introduction to npm
+npm (Node Package Manager) is a package manager for Node.js. It allows developers to easily install and manage dependencies for their projects.
+
+Working with node and npm
+1.  Create a new directory for your project and navigate to it in the terminal or command prompt
+2.  Run `npm init` to create a new `package.json` file
+3.  Run `npm install <package-name>` to install a package
+4.  Run `npm install <package-name> --save` to install a package and save 
+
+if we will use npm init -y it will not ask any question and will install node package manager with default information
+
+but if we will use only npm init only it will ask question regarding package name description license and more other questions.
