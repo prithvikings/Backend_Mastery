@@ -31,4 +31,9 @@ difference between framework and library
 
 -A framework is a collection of patterns and libraries to help with building an application. The framework will call your code when it needs something specific.
 
+Middleware in Express.js
+-Express.js Middleware are functions that execute during the lifecycle of a request to the Express server.
+
+-Basically jab bhi server request accept karta hai waha se route ke beech pahuchne tak agar aap us request ko beech mein rokte ho and kuch perform karte ho, to ye element ko middleware kehte hain.
+
 */
