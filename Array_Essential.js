@@ -3,6 +3,15 @@
 // function return 
 // async js coding
 
+
+//--------------------Arrays--------------------------------
+
+//Array is a collection of elements
+//Array is a non primitive data type in javascript
+//Array is mutable in nature
+//Array is a reference data type
+
+
 //foreach map filter find indexof
 
 //foreach
