@@ -1,0 +1,46 @@
+initialize a project with npm
+express install
+dynamic routing
+    how to get data coming from frontend at backend route
+
+setting up parsers for form:
+//setting up parsers for form means just adding 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+ 
+
+setting up ejs for ejs pages
+    install ejs from npm
+    npm i ejs
+setup ejs for view engine
+    app.set('view engine', 'ejs');
+
+setting up public static files
+    app.use(express.static(path.join(__dirname, 'public'))); // to use static files like css, js, images etc
+
+dynamic routing
+hum log kai baar kuch routes dekhte hai unmein sirf ek hi hissa change hota hai 
+like: 
+/author/harsh
+/author/rahul
+/author/param1
+
+sabse pehle browser par jao url likho apne jo aapko chahiye and enter dabaayie ab us url route ko karaiye res bhejiye kuch bhi ab usi url ko dynamic baanana hai to realise karo konsa part dynamic hai to uske aage route mein : laga denge
+
+
+
+//dynamic routing is done using : in route 
+const name = req.params.name;
+//or
+const name = req.params[0];
+//or
+const name = req.query.name;
+//or
+const name = req.body.name;
+//or
+const name = req.params.name || 'default name'; // if name is not provided it will take
+default name
+
+app.get('/author/:name', (req, res) => {
+
+})
