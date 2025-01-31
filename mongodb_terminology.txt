@@ -1,0 +1,48 @@
+In backend their are two server:
+1. Application server (node)
+2. database server (mongodb)
+
+-Application server : It basically handle the routes and accept the request
+
+-Database server : It basically handle the data and store the data in the database. 
+
+
+What is collection?
+------------------------
+A collection is a group of documents in a MongoDB database. Each document in a collection has a unique 
+_id field that uniquely identifies the document. Collections are similar to tables in relational databases,
+but they are more flexible and can store a variety of data types.
+
+
+
+What is schema? 
+----------------
+A schema is a blueprint or design for a database. It defines the structure of the data, including 
+the fields, data types, and relationships between them. In MongoDB, a schema is not enforced at
+the database level, but it can be enforced at the application level using validation rules.
+
+
+
+Database -> Collection -> Document
+
+CODE                    DATABASE
+-----------------------------------------
+mongoose.connect ->     Database Create
+mongoose.model   ->     Collection Create
+Create           ->     Document Create 
+
+
+
+
+
+-------------------
+1. Node.js (it is javascript runtime enviroment)  
+2. Express.js (it is web application framework for Node.js,It is designed for building web applications and APIs)
+3. MongoDB driver (to connect with database server)
+4. Mongoose (to interact with database)
+5. Passport.js (for authentication)
+6. JWT (for authentication and authorization)
+7. Multer (for file upload)
+8. Bcrypt (for password hashing)
+9. Helmet (for security)
+10. Cors (for cross-origin resource sharing)

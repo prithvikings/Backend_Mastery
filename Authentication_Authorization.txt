@@ -1,0 +1,71 @@
+user ko profile dena se pehle ye check karna hota hai ke user hai kaun - authentication
+
+authorized to perform some tasks which are only allowed to be executed by authorized by the admin.
+
+server har baar bhool jata hai ki aap kaun ho ab kyunki server bhool jata hai aap kaun ho to har baar wo har kaam ke liye aapse puchega aap kaun ho to issey bachne ke liye cookie and session ka concept use hota hai.
+
+sabse pahle humein kuchh cheezein seekhni hai alag alag:
+1. cookie kaise set karte hai and read karte hai
+2. Bcrypt kaise use karte hai for password encryption and decryption 
+3. jwt kya hai and jwt mein data kaise store karein and bahar nikaalein
+
+
+install jasonwebtoken
+install Bcrypt
+install cookie-parser
+
+
+
+ 
+
+what does bcrypt does in backend?
+---------------------------------------
+bcrypt is a password hashing function designed by Niels Provos and David Mazières, based on 
+the Blowfish cipher. It is a password hashing function that is designed to be slow and computationally
+expensive, making it more resistant to brute-force attacks. It is widely used in web applications to
+store passwords securely. 
+
+Basically bcrypt make password more secure so in future if our databse got compromise or hacked the password be safe and secure
+
+lets say for example humne ek password liya aur yeh basic example hai bcrypt doesnt work like this but it also change our password maanlo humne har word ko ek character aage count karte diya
+
+        Original Password       Hashed Password
+------------------------------------------------------
+        password        =>      qbttxpse
+
+
+code to use for bcrypt for encryption :
+bcrypt.genSalt(10, (err,salt)=>{
+    bcrypt.hash(password, salt, (err,hash)=>{
+        // store hash in your database
+    });
+});
+
+gensalt() – It is used to generate salt. Salt is a pseudorandom string that is added to the password.
+hash() – It is used to hash the password with the generated salt.
+
+With "salt round" they actually mean the cost factor. The cost factor controls how much time is needed to calculate a single BCrypt hash. The higher the cost factor, the more hashing rounds are done. Increasing the cost factor by 1 doubles the necessary time. The more time is necessary, the more difficult is brute-forcing.
+
+The salt is a random value, and should differ for each calculation, so the result should hardly ever be the same, even for equal passwords.
+
+The salt is usually included in the resulting hash-string in readable form. So with storing the hash-string you also store the salt. Have a look at this answer for more details.
+
+
+
+code to use for bcrypt for decryption :
+// To check if password is correct match or not
+bcrypt.compare(password, hash, (err, isMatch) => {
+    // isMatch true if password matches with hash
+    });
+
+
+
+----------------------------
+jasonwebtoken-JWT
+
+It gives 3 things 
+1. Red color header or algorithm & token type
+2. Payload data in purple colour
+3. verify signature in sky blue colour 
+
+humare kaam ke liye sirf Payload hi hai
