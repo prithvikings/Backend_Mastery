@@ -32,7 +32,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/create", (req, res) => {
-  const filePath = path.join(filesDir, `${req.body.title.split(" ").join("")}.txt`);
+  // Sanitize the title to remove unwanted characters
+  const safeTitle = req.body.title.replace(/[^a-zA-Z0-9-_]/g, "").trim();
+  const filePath = path.join(filesDir, `${safeTitle}.txt`);
+
   fs.writeFile(filePath, req.body.details, (err) => {
     if (err) {
       console.log(err);
@@ -42,14 +45,14 @@ app.post("/create", (req, res) => {
   });
 });
 
-app.get("/view/:id", (req, res) => {
-  const filePath = path.join(filesDir, `${req.params.id}.txt`);
+app.get("/file/:filename", (req, res) => {
+  const filePath = path.join(filesDir, req.params.filename);
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       console.log(err);
       return res.status(500).send("Error reading file");
     }
-    res.render("view", { title: req.params.id, details: data });
+    res.render('show', { title: req.params.filename.replace(".txt", ""), details: data });
   });
 });
 
