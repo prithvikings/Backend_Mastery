@@ -20,11 +20,11 @@ app.get("/", (req, res) => {
       console.log(err);
       return res.status(500).send("Error reading files");
     }
-    
+
     // Convert filenames into objects with title and ID
-    const tasks = files.map(file => ({
+    const tasks = files.map((file) => ({
       title: file.replace(".txt", ""),
-      _id: file
+      _id: file,
     }));
 
     res.render("index", { files: tasks });
@@ -34,6 +34,10 @@ app.get("/", (req, res) => {
 app.post("/create", (req, res) => {
   // Sanitize the title to remove unwanted characters
   const safeTitle = req.body.title.replace(/[^a-zA-Z0-9-_]/g, "").trim();
+  if (!safeTitle) {
+    return res.status(400).send("Invalid file name");
+  }
+
   const filePath = path.join(filesDir, `${safeTitle}.txt`);
 
   fs.writeFile(filePath, req.body.details, (err) => {
@@ -52,9 +56,39 @@ app.get("/file/:filename", (req, res) => {
       console.log(err);
       return res.status(500).send("Error reading file");
     }
-    res.render('show', { title: req.params.filename.replace(".txt", ""), details: data });
+    res.render("show", {
+      title: req.params.filename.replace(".txt", ""),
+      details: data,
+    });
   });
 });
+
+app.get("/edit/:filename", (req, res) => {
+  res.render("edit", { filename: req.params.filename });
+});
+
+app.post("/edit", (req, res) => {
+  const oldFileName = req.body.previous.trim().replace(".txt", ""); // Remove extra .txt if present
+  const newFileName = req.body.new.trim().replace(".txt", ""); // Ensure no double .txt
+
+  const oldPath = path.join(filesDir, `${oldFileName}.txt`);
+  const newPath = path.join(filesDir, `${newFileName}.txt`);
+
+  // Check if the old file exists before renaming
+  if (!fs.existsSync(oldPath)) {
+    console.log("Error: File not found:", oldPath);
+    return res.status(404).send("File not found. Check the filename.");
+  }
+
+  fs.rename(oldPath, newPath, (err) => {
+    if (err) {
+      console.log("Rename error:", err);
+      return res.status(500).send("Error renaming file");
+    }
+    res.redirect("/");
+  });
+});
+
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
