@@ -1,0 +1,23 @@
+userModel
+-------------------------
+fullName-String
+email-String
+password-String
+cart-array
+isadmin-boolean
+orders-array
+contact-number
+picture- db
+
+
+
+
+Product
+-------------------------
+image
+name
+price
+discount
+bgcolor
+panelcolor
+textcolor
