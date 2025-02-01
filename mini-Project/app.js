@@ -7,6 +7,8 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const postModel = require("./models/post");
 const user = require("./models/user");
+const crypto = require("crypto");
+const upload = require("./utils/multerconfig");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,6 +19,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+
 
 app.post("/register", async (req, res) => {
   let { username, password, email, age, name } = req.body;
@@ -141,6 +145,27 @@ app.post("/update/:id", isloggedin, async (req, res) => {
   let post = await postModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
   res.redirect("/profile");
 });
+
+
+app.get("/profile/upload", (req, res) => {
+  res.render("profileupload");
+});
+
+
+
+app.post("/upload", isloggedin, upload.single("image"), async (req, res) => {
+  console.log("Uploaded file details:", req.file);  // Debugging line
+
+  if (!req.file) {
+    return res.status(400).json({ message: "No file uploaded" });
+  }
+
+  let user = await userModel.findOne({ email: req.user.email });
+  user.profilepic = req.file.filename;
+  await user.save();
+  res.redirect("/profile");
+});
+
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

@@ -4,3 +4,18 @@ logout
 post create karna hai
 post like
 post delete only to the owner of post
+
+
+------------------------
+Multer
+What is multer?
+whenerever you try to send file or image to your friend
+this can be done by multer.
+
+npm i multer to start
+
+//basic code 
+<form action="/profile" method="post" enctype="multipart/form-data">
+  <input type="file" name="avatar" />
+</form>
+

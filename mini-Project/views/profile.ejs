@@ -13,11 +13,15 @@
                 Logout
             </a>
         </div>
-
+<div class="flex items-start gap-3">
+    <div class="w-10 h-10  rounded-full overflow-hidden">
+        <img class="w-full h-full object-cover" src="/images/upload/<%=user.profilepic%>" alt="Profilepic">
+    </div>
         <h3 class="text-3xl">
             <span class="font-light">Hello, </span><%= user.name %> 👋
         </h3>
-        <h5 class="mb-5">You can create a new post</h5>
+</div>
+        <h5 class="mb-5 mt-3">You can create a new post</h5>
 
         <!-- Post Creation Form -->
         <form action="/post" method="post">
