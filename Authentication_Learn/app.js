@@ -16,8 +16,8 @@ app.get('/',(req,res)=>{
 
 // for reading cookie
 app.get('/read',(req,res)=>{
-    res.send('checking on other page that cookie is set or not');
-    console.log("cookies : ",req.cookies.token);
+    let data=jwt.verify(req.cookies.token,'my_secret_key');
+    res.send(data);
 })
 
 // for clearing cookie

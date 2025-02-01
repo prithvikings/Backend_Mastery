@@ -69,3 +69,15 @@ It gives 3 things
 3. verify signature in sky blue colour 
 
 humare kaam ke liye sirf Payload hi hai
+
+
+----------------
+Alright so lets say if we want to make create a account then we have to follow these steps:
+
+mongoose
+create a schema
+create a model
+usercreate-> password-> hash
+jwt token-> cookie
+
+login-> token ->decrypt ->email
