@@ -1,0 +1,6 @@
+user post likh payenge
+login and register
+logout
+post create karna hai
+post like
+post delete only to the owner of post
