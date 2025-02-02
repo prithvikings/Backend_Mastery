@@ -65,3 +65,11 @@ module.exports.loginuser = async (req, res) => {
             console.log(err.message);
         }
 };
+
+module.exports.logout = async (req, res) => {
+    res.clearCookie("token");
+    res.status(200).json({
+        status: "success",
+        message: "User logged out",
+    });
+}
