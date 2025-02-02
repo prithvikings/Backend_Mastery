@@ -23,6 +23,7 @@ router.post("/create", async (req, res) => {
 });
 
 router.get("/admin",(req,res)=>{
-    res.render("createproducts");
+    let success=req.flash("success");
+    res.render("createproducts",{success});
 });
 module.exports = router;

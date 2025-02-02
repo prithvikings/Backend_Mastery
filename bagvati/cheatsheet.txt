@@ -30,3 +30,47 @@ textcolor
 /admin ->admin panel
 /owner/products ->show all products
 /owner/admin ->show admin panel to create products
+
+brown
+text 774f3d
+panel debeae
+bgcolor f4ddd2
+
+lightblue
+text 48606E
+panel D3E4EE
+bgcolor F3F8F8
+
+khaakibrown
+text 5F4A30
+panel C5B095
+bgcolor DED0BF
+
+pink
+text 816264
+panel E3C4C6
+bgcolor F4E0E1
+
+clingeBag
+1200
+
+backpack
+1100
+
+multipurpose
+100
+
+pink Attack
+1400 25%
+
+The Stud 
+1100
+
+Surprise
+1100
+
+supreme
+1800
+
+the Daily
+100
