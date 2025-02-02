@@ -73,3 +73,4 @@ module.exports.logout = async (req, res) => {
         message: "User logged out",
     });
 }
+
