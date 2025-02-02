@@ -5,9 +5,10 @@ const cookieParser=require('cookie-parser');
 const ownersRouter=require('./Routes/ownersRouter');
 const usersRouter=require('./Routes/usersRouter');
 const productsRouter=require('./Routes/productsRouter');
-
+const homeRoute=require("./Routes/index");
 const db=require("./configuration/mongooseConnection");
 
+require('dotenv').config();
 
 
 app.set('view engine','ejs');
@@ -16,7 +17,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'public')));
 
-
+app.use("/",homeRoute);
 app.use("/owners",ownersRouter);
 app.use("/users",usersRouter);
 app.use("/products",productsRouter);
