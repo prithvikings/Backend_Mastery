@@ -1,5 +1,5 @@
 const validate = (schema) => async (req, res, next) => {
-  try {
+ 
     const result = await schema.safeParseAsync(req.body);
 
     if (!result.success) {
@@ -11,12 +11,7 @@ const validate = (schema) => async (req, res, next) => {
     }
     req.body = result.data; // Store the validated data
     return next();
-  } catch (err) {
-    return res.status(500).json({
-      status: 500,
-      message: "Server Error",
-    });
-  }
+  
 };
 
 module.exports = validate;

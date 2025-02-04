@@ -1,15 +1,13 @@
 const User = require("../models/user-model");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
-
-
-function home(req, res) {
+const home = (req, res) => {
   try {
     res.status(200).json({ msg: "Welcome to our home page" });
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 const register = async (req, res) => {
   try {
@@ -23,7 +21,20 @@ const register = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     password = await bcrypt.hash(password, salt);
 
-    const user = new User({
+    //both ways are correct to create a new user in the database using mongoose model but the second way is more efficient
+
+    // const user = new User({
+    //   username,
+    //   email,
+    //   password,
+    //   phone,
+    //   isAdmin,
+    // });
+
+    // await user.save();
+
+    
+    const user = await User.create({
       username,
       email,
       password,
@@ -31,19 +42,16 @@ const register = async (req, res) => {
       isAdmin,
     });
 
-    await user.save();
     res.status(201).json({
       msg: "Registration Successful",
       user,
       token: await user.generateToken(),
       userId: user._id.toString(),
-
     });
   } catch (error) {
     res.status(500).send(error.message);
   }
 };
-
 
 const login = async (req, res) => {
   try {
@@ -71,5 +79,4 @@ const login = async (req, res) => {
   }
 };
 
-
-module.exports = { home, register,login };
+module.exports = { home, register, login };
