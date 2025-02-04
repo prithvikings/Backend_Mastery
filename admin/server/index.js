@@ -1,17 +1,22 @@
-const express=require('express');
-const app=express();
-const path=require('path');
+require("dotenv").config();
+const express = require("express");
+const app = express();
+const router = require("./Router/auth-router");
+const PORT = 3000;
+const connect = require("./utils/db");
 
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.urlencoded({ extended: true }));
 
 
-app.get('/',(req,res)=>{
-    res.send('Hello World');
-})
+// Mount the Router: To use the router in your main Express app, you can "mount" it at a specific URL prefix
+app.use("/api/auth", router);
 
-app.listen(3000,()=>{
-    console.log('Server is running on port 3000');
-})
+
+// Connect to the database
+connect().then(()=>{
+    app.listen(PORT,()=>{
+        console.log(`Server is running at port ${PORT}`);
+    })
+});
