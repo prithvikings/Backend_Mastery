@@ -6,7 +6,7 @@ import Contact from "./pages/contact";
 import Service from "./pages/service";
 import Register from "./pages/register";
 import Login from "./pages/login";
-import Navbar from "./components/navbar";
+import {Navbar} from "./components/Navbar";
 const App = () => {
   return (
     <BrowserRouter>

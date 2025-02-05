@@ -2,7 +2,7 @@ import React from 'react'
 
 const home = () => {
   return (
-    <div>home</div>
+    <div className='w-full min-h-screen bg-zinc-800'>home</div>
   )
 }
 
