@@ -1,17 +1,14 @@
-import React from 'react'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-
-const login = () => {
-  onst [user, setUser] = useState({
-    username: "",
+const Login = () => {
+  const [user, setUser] = useState({
+    email: "",
     password: "",
   });
 
   const navigate = useNavigate();
 
-  // let handle the input field value
   const handleInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -21,6 +18,13 @@ const login = () => {
       [name]: value,
     });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+    navigate("/home");
+  };
+
   return (
     <>
       <section>
@@ -35,35 +39,34 @@ const login = () => {
                   height="500"
                 />
               </div>
-              {/* our main registration code  */}
               <div className="registration-form">
                 <h1 className="main-heading mb-3">Login form</h1>
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label htmlFor="email">email</label>
+                    <label htmlFor="email">Email</label>
                     <input
                       type="text"
                       name="email"
                       value={user.email}
                       onChange={handleInput}
-                      placeholder="email"
+                      placeholder="Email"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="password">password</label>
+                    <label htmlFor="password">Password</label>
                     <input
                       type="password"
                       name="password"
                       value={user.password}
                       onChange={handleInput}
-                      placeholder="password"
+                      placeholder="Password"
                     />
                   </div>
                   <br />
                   <button type="submit" className="btn btn-submit">
-                    Register Now
+                    Login Now
                   </button>
                 </form>
               </div>
@@ -72,7 +75,7 @@ const login = () => {
         </main>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default login
+export default Login;

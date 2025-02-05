@@ -34,7 +34,7 @@ const register = () => {
               <img
                 src="/images/register.png"
                 alt="a nurse with a cute look"
-                width="400"
+                width="500"
                 height="500"
               />
             </div>
