@@ -1,0 +1,15 @@
+Steps to use express generator 
+
+sabse pehle jeeban mein ek baar laptop par install karo globally
+
+npm i express-generator -g
+
+to create new app anywhere:
+
+open cmd 
+create new app:
+express appname --view=ejs
+
+now use three commands 
+cd appname 
+npm i open it on vscode
