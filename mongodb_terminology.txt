@@ -46,3 +46,23 @@ Create           ->     Document Create
 8. Bcrypt (for password hashing)
 9. Helmet (for security)
 10. Cors (for cross-origin resource sharing)
+
+
+how does mongodb create id?
+MongoDB automatically generates a unique identifier called ObjectId for each document stored in a collection if an _id field is not explicitly provided. The ObjectId is a 12-byte hexadecimal value designed to be globally unique.
+
+Structure of ObjectId
+MongoDB's ObjectId consists of 12 bytes structured as follows:
+
+Bytes	Component	Description
+4 bytes	Timestamp	Creation time in seconds since Unix epoch
+5 bytes	Machine ID	Unique identifier for the machine
+2 bytes	Process ID	Unique identifier for the process creating the ObjectId
+3 bytes	Counter	    Incrementing counter to prevent duplication
+
+64b94f29b57a1e5b3d2c8e45
+-------------------
+64b94f29 → Timestamp
+b57a1e5b3d → Machine ID
+2c8e → Process ID
+45 → Counter

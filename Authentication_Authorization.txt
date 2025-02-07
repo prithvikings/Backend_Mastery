@@ -1,3 +1,12 @@
+In simple terms:
+
+-Authentication: "Are you who you say you are?"
+-Authorization: "What are you allowed to do?"
+-Encryption: "Let’s make this data unreadable for security."
+-Decryption: "Now, let’s make it readable again."
+
+------------------------------------------
+
 user ko profile dena se pehle ye check karna hota hai ke user hai kaun - authentication
 
 authorized to perform some tasks which are only allowed to be executed by authorized by the admin.
@@ -81,3 +90,22 @@ usercreate-> password-> hash
 jwt token-> cookie
 
 login-> token ->decrypt ->email
+
+
+
+
+Passport
+passport is a middleware that helps to authenticate the user. It is used to authenticate the user by checking 
+the user's credentials against the database. It is used to authenticate the user by checking the user's 
+credentials against the database.
+
+install these packages
+npm install passport passport-local passport-local-mongoose bcrypt jsonwebtoken mongoose express-session cookie-parser body-parser
+
+write app.js code first in app.js file and write it after view engine and express-session and before logger
+it will be like first view engine then express-ssion then our code and then logger
+
+
+setup user.js properly
+
+in index.js try register and other codes as well

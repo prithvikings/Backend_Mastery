@@ -1,0 +1,22 @@
+hum log kuch bhi data frontend par browser par rakh skte hai and jab bhi aap kuch bhi req backend karo ge wo frontend pe save data automatically backend par chala jayega
+
+login karne ke baad hum ek token ko frontend aur backend dono jagah save karte hai taaki in future whenever we will do req that request also included that token so server can verify us.
+
+jo frontend pe save hota hai ussey cookie kehte hai
+
+session is Basically connection between server and frontend till the cookie has token in the frontend and server also has same token
+
+what is the use of express.json()?
+
+express.json() is a built-in middleware function in Express.js that parses incoming JSON requests. It is primarily used to handle JSON payloads sent in HTTP request bodies, such as in POST, PUT, or PATCH requests.
+
+Use Case
+When a client sends JSON data in the request body, express.json() helps extract and parse it into a JavaScript object, making it accessible in req.body.
+
+Why is it needed?
+Express does not parse request bodies by default.
+Without express.json(), req.body would be undefined when handling JSON data.
+It ensures that JSON payloads are converted into JavaScript objects automatically.
+Alternatives
+express.urlencoded({ extended: true }) → For parsing URL-encoded form data.
+body-parser.json() (before Express 4.16.0) → Now integrated into Express as express.json().
